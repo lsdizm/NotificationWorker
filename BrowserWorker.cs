@@ -30,20 +30,20 @@ namespace NotificationWorker
             CefSharp.Cef.Initialize(settings);
 
             //웹 사이트 이동
-            //var url = "https://gwa.ezcaretech.com";
-            var url = "https://camp.xticket.kr/web/main?shopEncode=5f9422e223671b122a7f2c94f4e15c6f71cd1a49141314cf19adccb98162b5b0";
+            var url = "https://gwa.ezcaretech.com";
+            //var url = "https://camp.xticket.kr/web/main?shopEncode=5f9422e223671b122a7f2c94f4e15c6f71cd1a49141314cf19adccb98162b5b0";
             _chrome = new ChromiumWebBrowser(url);
             //_chrome.async
             var loadResult = await _chrome.LoadUrlAsync(url).ConfigureAwait(false);
             if (loadResult.Success)
             {
-                //_chrome.ExecuteScriptAsync("document.getElementById('userId').value = 'burn7';");
-                //_chrome.ExecuteScriptAsync("document.getElementById('userPw').value = '!dlwlzpdjxpr1';");
-                //_chrome.ExecuteScriptAsync("actionLogin();");
+                _chrome.ExecuteScriptAsync("document.getElementById('userId').value = 'burn7';");
+                _chrome.ExecuteScriptAsync("document.getElementById('userPw').value = '!dlwlzpdjxpr1';");
+                _chrome.ExecuteScriptAsync("actionLogin();");
 
-                _chrome.ExecuteScriptAsync("document.getElementById('login_id').value = 'burn7';");
-                _chrome.ExecuteScriptAsync("document.getElementById('login_passwd').value = '79qkrqudcjf';");
-                _chrome.ExecuteScriptAsync("model.login();");
+                // _chrome.ExecuteScriptAsync("document.getElementById('login_id').value = 'burn7';");
+                // _chrome.ExecuteScriptAsync("document.getElementById('login_passwd').value = '79qkrqudcjf';");
+                // _chrome.ExecuteScriptAsync("model.login();");
                 //var result = await SearchCancelAppointmentSlot().ConfigureAwait(false);
 
                 var result = await _chrome.GetSourceAsync().ConfigureAwait(false);
