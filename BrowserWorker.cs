@@ -44,9 +44,9 @@ namespace NotificationWorker
                 _chrome.ExecuteScriptAsync("document.getElementById('login_id').value = 'burn7';");
                 _chrome.ExecuteScriptAsync("document.getElementById('login_passwd').value = '79qkrqudcjf';");
                 _chrome.ExecuteScriptAsync("model.login();");
-                var result = await SearchCancelAppointmentSlot().ConfigureAwait(false);
+                //var result = await SearchCancelAppointmentSlot().ConfigureAwait(false);
 
-                //var result = await _chrome.GetSourceAsync().ConfigureAwait(false);
+                var result = await _chrome.GetSourceAsync().ConfigureAwait(false);
                 return result;
             }
 
@@ -84,7 +84,7 @@ namespace NotificationWorker
             }
             catch (Exception ex)
             {
-                return ex.Message();
+                return ex.ToString();
             }
         }
     }
