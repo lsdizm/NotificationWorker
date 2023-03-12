@@ -84,7 +84,7 @@ namespace NotificationWorker
             }
             catch (Exception ex)
             {
-                return ex.ToString();
+                return ex.Message();
             }
         }
     }
