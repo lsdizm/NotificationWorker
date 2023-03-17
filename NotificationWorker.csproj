@@ -7,8 +7,19 @@
     <UserSecretsId>dotnet-NotificationWorker-e539f256-3739-48cc-85a9-f1a42f2a1fdd</UserSecretsId>
   </PropertyGroup>
 
+    <PropertyGroup Condition="'$(PlatformTarget)' == 'x64'">
+      <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(PlatformTarget)' == 'x86'">
+      <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+    </PropertyGroup>
+    
   <ItemGroup>
-    <PackageReference Include="CefSharp.OffScreen.NETCore" Version="110.0.300" />
+    <PackageReference Include="cef.redist.x64" Version="111.2.2" />
+    <PackageReference Include="cef.redist.x86" Version="111.2.2" />
+    <PackageReference Include="CefSharp.Common.NETCore" Version="111.2.20" />
+    <PackageReference Include="CefSharp.OffScreen.NETCore" Version="111.2.20" />
     <PackageReference Include="Json.Net.Core" Version="1.0.33" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     <PackageReference Include="Newtonsoft.JSON" Version="13.0.2" />

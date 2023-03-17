@@ -25,8 +25,8 @@ namespace NotificationWorker
         private async Task<string> MakeSession()
         {
             //쿠키 데이터 사용하는 방법
-            CefSettings settings = new CefSettings();
-            settings.CachePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\CEF";
+            CefSettings settings = new CefSettings();            
+            //settings.CachePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\CEF";
             CefSharp.Cef.Initialize(settings);
 
             //웹 사이트 이동
@@ -40,6 +40,7 @@ namespace NotificationWorker
                 _chrome.ExecuteScriptAsync("document.getElementById('userId').value = 'burn7';");
                 _chrome.ExecuteScriptAsync("document.getElementById('userPw').value = '!dlwlzpdjxpr1';");
                 _chrome.ExecuteScriptAsync("actionLogin();");
+                
 
                 // _chrome.ExecuteScriptAsync("document.getElementById('login_id').value = 'burn7';");
                 // _chrome.ExecuteScriptAsync("document.getElementById('login_passwd').value = '79qkrqudcjf';");
